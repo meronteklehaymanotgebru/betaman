@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+// File: client/src/app/layout.tsx
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { WalletContextProvider } from "@/context/WalletContext";
@@ -10,13 +11,23 @@ export const metadata: Metadata = {
   description: "Decentralized rental verification for Ethiopia",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <WalletContextProvider>{children}</WalletContextProvider>
+      <body className={`${inter.className} antialiased`}>
+        <WalletContextProvider>
+          {children}
+        </WalletContextProvider>
       </body>
     </html>
   );

@@ -1,0 +1,35 @@
+
+# Dependencies
+node_modules/
+client/node_modules/
+program/target/
+
+# Build outputs
+.next/
+client/.next/
+client/out/
+program/target/
+
+# Environment (NEVER commit secrets)
+.env
+.env.local
+.env*.local
+client/.env
+client/.env.local
+client/.env*.local
+
+# IDE and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Solana keys (except program ID files)
+*.key
+!program/betaman_program/programs/betaman_program/Cargo.toml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
